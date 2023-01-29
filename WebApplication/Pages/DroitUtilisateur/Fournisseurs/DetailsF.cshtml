@@ -1,0 +1,43 @@
+﻿@page
+@model WebApplication.Pages.DroitUtilisateur.Fournisseurs.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Fournisseur</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Fournisseur.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Fournisseur.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Fournisseur.Telephone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Fournisseur.Telephone)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Fournisseur.Siret)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Fournisseur.Siret)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Fournisseur.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Fournisseur.Email)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./EditF" asp-route-id="@Model.Fournisseur.Id">Edit</a> |
+    <a asp-page="./IndexF">Back to List</a>
+</div>

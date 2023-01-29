@@ -1,0 +1,49 @@
+﻿@page
+@model WebApplication.Pages.DroitUtilisateur.Fournisseurs.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Fournisseur</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Fournisseur.Name" class="control-label"></label>
+                <input asp-for="Fournisseur.Name" class="form-control" />
+                <span asp-validation-for="Fournisseur.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fournisseur.Telephone" class="control-label"></label>
+                <input asp-for="Fournisseur.Telephone" class="form-control" />
+                <span asp-validation-for="Fournisseur.Telephone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fournisseur.Siret" class="control-label"></label>
+                <input asp-for="Fournisseur.Siret" class="form-control" />
+                <span asp-validation-for="Fournisseur.Siret" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fournisseur.Email" class="control-label"></label>
+                <input asp-for="Fournisseur.Email" class="form-control" />
+                <span asp-validation-for="Fournisseur.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="IndexF">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

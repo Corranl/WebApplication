@@ -1,0 +1,60 @@
+﻿@page
+@model WebApplication.Pages.Admin.Utilisateurs.IndexModel
+
+@{
+    ViewData["Title"] = "Gestion Utilisateur";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-page="Create">Crée un nouvelle Utiliateur</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Utilisateur[0].Nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Utilisateur[0].Prenom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Utilisateur[0].Telephone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Utilisateur[0].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Utilisateur[0].Password)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Utilisateur) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prenom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telephone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Modifier</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Detail</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Suprimer</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

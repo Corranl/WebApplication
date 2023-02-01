@@ -1,0 +1,50 @@
+﻿@page
+@model WebApplication.Pages.DroitUtilisateur.CommandeClient.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>CmdClient</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CmdClient.Id" />
+            <div class="form-group">
+                <label asp-for="CmdClient.NumCommande" class="control-label"></label>
+                <input asp-for="CmdClient.NumCommande" class="form-control" />
+                <span asp-validation-for="CmdClient.NumCommande" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CmdClient.Date" class="control-label"></label>
+                <input asp-for="CmdClient.Date" class="form-control" />
+                <span asp-validation-for="CmdClient.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CmdClient.Heure" class="control-label"></label>
+                <input asp-for="CmdClient.Heure" class="form-control" />
+                <span asp-validation-for="CmdClient.Heure" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CmdClient.Prix" class="control-label"></label>
+                <input asp-for="CmdClient.Prix" class="form-control" />
+                <span asp-validation-for="CmdClient.Prix" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./IndexCC">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

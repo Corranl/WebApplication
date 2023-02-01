@@ -1,0 +1,69 @@
+﻿@page
+@model WebApplication.Pages.DroitUtilisateur.Produits.CreateModel
+
+@{
+    ViewData["Title"] = "Enregistrer un nouveau Produit";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h4> Nouveau Produit</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Produit.Nom" class="control-label"></label>
+                <input asp-for="Produit.Nom" class="form-control" />
+                <span asp-validation-for="Produit.Nom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Produit.Reference" class="control-label"></label>
+                <input asp-for="Produit.Reference" class="form-control" />
+                <span asp-validation-for="Produit.Reference" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Produit.Quantite" class="control-label"></label>
+                <input asp-for="Produit.Quantite" class="form-control" />
+                <span asp-validation-for="Produit.Quantite" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Produit.PrixUnitaire" class="control-label"></label>
+                <input asp-for="Produit.PrixUnitaire" class="form-control" />
+                <span asp-validation-for="Produit.PrixUnitaire" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Produit.PrixCarton" class="control-label"></label>
+                <input asp-for="Produit.PrixCarton" class="form-control" />
+                <span asp-validation-for="Produit.PrixCarton" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Produit.Millesime" class="control-label"></label>
+                <input asp-for="Produit.Millesime" class="form-control" />
+                <span asp-validation-for="Produit.Millesime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Produit.Famille" class="control-label"></label>
+                <input asp-for="Produit.Famille" class="form-control" />
+                <span asp-validation-for="Produit.Famille" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Produit.Volume" class="control-label"></label>
+                <input asp-for="Produit.Volume" class="form-control" />
+                <span asp-validation-for="Produit.Volume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Enregistrer" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="IndexP">Retour à la liste</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

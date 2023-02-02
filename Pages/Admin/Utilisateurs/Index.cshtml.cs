@@ -12,7 +12,7 @@ using WebApplication.Data;
 
 namespace WebApplication.Pages.Admin.Utilisateurs
 {
-    [Authorize(Roles ="user")]
+    [Authorize(Roles ="admin")]
     public class IndexModel : PageModel
     {
         private readonly WebApplication.Data.DataContext _context;

@@ -27,16 +27,19 @@ namespace WebApplication.Pages.Admin
             }
             return Page();
         }
+        //Connection admin ou utilisateur
         public async Task<IActionResult> OnPost(string username, string password, string ReturnUrl)
         {
+            //Déclaration pour l'Admin
             var authSection = Configuration.GetSection("Auth");
             string adminLogin = authSection["AdminLogin"];
             string adminPassword = authSection["AdminPassword"];
 
+            //Déclaration pour l'Utilisateur
             var authSectionUtilisateur = Configuration.GetSection("AuthUtilisateur");
             string utilisateurLogin = authSectionUtilisateur["UtilisateurLogin"];
             string utilisateurPassword = authSectionUtilisateur["UtilisateurPassword"];
-            // var utilisateur = await _context.Utilisateurs.FirstOrDefaultAsync(m => m.Id == id);
+           
 
             if ((username == adminLogin) && (password == adminPassword))
             {
@@ -63,7 +66,7 @@ namespace WebApplication.Pages.Admin
                 var claimsIdentity = new ClaimsIdentity(claims, "Login");
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new
                ClaimsPrincipal(claimsIdentity));
-                return Redirect(ReturnUrl == null ? "/DroitUtilisateur/Produits" : ReturnUrl);
+                return Redirect(ReturnUrl == null ? "/Adminhome" : ReturnUrl);
             }else
             {
                 DisplayInvalidAccountMessage = true;
@@ -71,6 +74,7 @@ namespace WebApplication.Pages.Admin
             }
            
         }
+        //redirection après logout
         public async Task<IActionResult> OnGetLogout()
         {
             await HttpContext.SignOutAsync();

@@ -1,4 +1,4 @@
-﻿@page
+﻿s@page
 @model WebApplication.Pages.AdminHomeModel
 @{
 }
@@ -11,13 +11,25 @@
 <body>
     <h1>
      <ul>
-                  <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/DroitUtilisateur/Produits/IndexP">Gestion des vins</a>
-                        </li>
+           
+            @if(User.IsInRole("admin"))
+            {
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-page="/Admin/Utilisateurs/Index">Gestion des employés</a>
+                </li>
+            }
         <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="" asp-page="/Admin/Utilisateurs/Index">Gestion des employés</a>
+            <a class="nav-link text-dark" asp-area="" asp-page="/DroitUtilisateur/Produits/IndexP">Gestion des vins</a>
         </li>
-                    </ul>
+       
+        <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-page="/DroitUtilisateur/Clients/IndexC">Gestion des Clients</a>
+        </li>
+        <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-page="/DroitUtilisateur/Fournisseurs/IndexF">Gestion des Fournisseur</a>
+        </li>
+
+     </ul>
     </h1>
 
 
